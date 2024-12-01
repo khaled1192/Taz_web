@@ -71,25 +71,48 @@ const canvas = document.getElementById("canvas");
 const ctx = canvas.getContext("2d");
 let isDrawing = false;
 
-canvas.addEventListener("mousedown", () => (isDrawing = true));
-canvas.addEventListener("mouseup", () => (isDrawing = false));
-canvas.addEventListener("mousemove", draw);
+function startDrawing(event) {
+    isDrawing = true;
+    event.preventDefault();
+}
+
+function stopDrawing() {
+    isDrawing = false;
+    ctx.beginPath();
+}
 
 function draw(event) {
     if (!isDrawing) return;
+
+    // For mobile devices, handle the touch coordinates.
+    const x = event.offsetX || event.touches[0].clientX - canvas.offsetLeft;
+    const y = event.offsetY || event.touches[0].clientY - canvas.offsetTop;
+
     ctx.lineWidth = 3;
     ctx.lineCap = "round";
     ctx.strokeStyle = "#1e90ff";
 
-    ctx.lineTo(event.offsetX, event.offsetY);
+    ctx.lineTo(x, y);
     ctx.stroke();
     ctx.beginPath();
-    ctx.moveTo(event.offsetX, event.offsetY);
+    ctx.moveTo(x, y);
 }
 
+// For mouse events (desktop)
+canvas.addEventListener("mousedown", startDrawing);
+canvas.addEventListener("mouseup", stopDrawing);
+canvas.addEventListener("mousemove", draw);
+
+// For touch events (mobile)
+canvas.addEventListener("touchstart", startDrawing);
+canvas.addEventListener("touchend", stopDrawing);
+canvas.addEventListener("touchmove", draw);
+
+// Clear canvas button
 document.getElementById("clearCanvas").addEventListener("click", () => {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 });
+
 
 let count = 0;
 let isPlaying = false;
