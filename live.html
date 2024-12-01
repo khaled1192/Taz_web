@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>بثوث عثمان</title>
+    <link rel="stylesheet" href="live.css">
+</head>
+<body>
+    <section id="liveStream" class="section">
+        <div class="container">
+            <h2>البث المباشر مع عثمان</h2>
+            <p id="stream-description">شاهد عثمان مباشرة أثناء مشاركته خبراته وأفكاره!</p>
+            <div class="live-video">
+                <iframe 
+                    width="560" 
+                    height="315" 
+                    src="https://www.youtube.com/embed/live_stream?channel=YOUR_CHANNEL_ID" 
+                    title="YouTube Live Stream" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <div id="chat-section">
+                <h3>التفاعل مع عثمان</h3>
+                <div id="chatBox"></div>
+                <input type="text" id="chatInput" placeholder="اكتب رسالة..." />
+                <button id="sendMessage">إرسال</button>
+            </div>
+        </div>
+    </section>
+    <button class="home-button" onclick="goHome()">العودة إلى الصفحة الرئيسية</button>
+        </div>
+    </div>
+
+    <script>
+        function goHome() {
+            window.location.href = "index.html";
+        }
+    </script>
+
+    <script src="live.js"></script>
+</body>
+</html>

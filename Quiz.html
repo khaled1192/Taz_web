@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Quiz.css">
+    <title>اختبار عثمان</title>
+</head>
+<body>
+    
+    <section id="quiz" class="section">
+        <div class="container">
+            <h2>اختبر معلوماتك عن عثمان</h2>
+            <form id="quizForm">
+                <label>ما هو طموح عثمان؟</label>
+                <<div class="question">
+                    <label>ما هو طموح عثمان؟</label>
+                    <select name="q1">
+                        <option value="wrong">أن يصبح لاعب كرة</option>
+                        <option value="correct">رائد في التقنية</option>
+                        <option value="wrong">مصمم أزياء</option>
+                    </select>
+                </div>
+                
+                <div class="question">
+                    <label>ما هي هواية عثمان المفضلة؟</label>
+                    <select name="q2">
+                        <option value="wrong">الرسم</option>
+                        <option value="correct">تطوير الألعاب</option>
+                        <option value="wrong">الطبخ</option>
+                    </select>
+                </div>
+
+                <div class="question">
+                    <label>أين يعيش عثمان؟</label>
+                    <select name="q3">
+                        <option value="correct">الخبر</option>
+                        <option value="wrong">الرياض</option>
+                        <option value="wrong">جدة</option>
+                    </select>
+                </div>
+                <button type="button" id="submitQuiz">إرسال</button>
+                <p id="quizResult"></p>
+            </form>
+        </div>
+    </section>
+    
+</section>
+<button class="home-button" onclick="goHome()">العودة إلى الصفحة الرئيسية</button>
+    </div>
+</div>
+
+<script>
+    function goHome() {
+        window.location.href = "index.html";
+    }
+</script>
+
+
+    <script src="Quiz.js"></script>
+
+</body>
+</html>
