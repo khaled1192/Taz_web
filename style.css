@@ -5,6 +5,8 @@ body {
     padding: 0;
     box-sizing: border-box;
     line-height: 1.6;
+    background: linear-gradient(to bottom right, #282c34, #3b3b98);
+    color: #fff;
 }
 
 .container {
@@ -12,6 +14,7 @@ body {
     max-width: 1200px;
     margin: auto;
 }
+
 
 
 header {
@@ -74,10 +77,12 @@ header nav ul li a:hover {
 }
 
 
+
 .gallery {
     display: flex;
     justify-content: center;
     gap: 20px;
+    flex-wrap: wrap;
 }
 
 .gallery img {
@@ -91,6 +96,7 @@ header nav ul li a:hover {
 .gallery img:hover {
     transform: scale(1.1);
 }
+
 
 
 form {
@@ -121,6 +127,7 @@ form button:hover {
 }
 
 
+
 .stats {
     display: flex;
     justify-content: space-around;
@@ -135,6 +142,7 @@ form button:hover {
     font-size: 2.5rem;
     color: #1e90ff;
 }
+
 
 
 button {
@@ -154,6 +162,7 @@ button:hover {
 }
 
 
+
 body.dark-mode {
     background-color: #121212;
     color: #fff;
@@ -167,6 +176,7 @@ body.dark-mode button {
     background: #fff;
     color: #333;
 }
+
 
 
 .counters {
@@ -183,6 +193,7 @@ body.dark-mode button {
     font-size: 2.5rem;
     color: #1e90ff;
 }
+
 
 
 #backToTop {
@@ -205,6 +216,7 @@ body.dark-mode button {
 #backToTop:hover {
     background-color: #00509e;
 }
+
 
 
 .social-buttons {
@@ -240,6 +252,7 @@ body.dark-mode button {
 }
 
 
+
 canvas {
     border: 1px solid #ddd;
     display: block;
@@ -263,6 +276,7 @@ canvas {
 }
 
 
+
 #particles-js {
     position: fixed;
     width: 100%;
@@ -270,4 +284,93 @@ canvas {
     z-index: -1;
 }
 
+/* الاستجابة للهواتف المحمولة */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
 
+    header nav ul {
+        flex-direction: column;
+    }
+
+    .gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .gallery img {
+        width: 100%;
+        height: auto;
+    }
+
+    .stats {
+        flex-direction: column;
+    }
+
+    .stats div {
+        margin: 20px 0;
+    }
+
+    .section h2 {
+        font-size: 1.8rem;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    form input,
+    form textarea,
+    form button {
+        padding: 12px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+
+    #backToTop {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .social-btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
+
+    form {
+        max-width: 90%;
+    }
+
+    .stats h3 {
+        font-size: 2rem;
+    }
+
+    .counters .counter {
+        font-size: 2rem;
+    }
+
+    button {
+        padding: 8px 18px;
+        font-size: 1rem;
+    }
+
+    .social-btn {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+}
